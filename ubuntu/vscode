@@ -1,0 +1,145 @@
+{
+
+  "symbols.hidesExplorerArrows": false,
+  "workbench.iconTheme": "symbols",
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 18,
+  "editor.rulers": [80, 120],
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.minimap.enabled": false,
+  "editor.renderLineHighlight": "gutter",
+  "explorer.compactFolders": true,
+  "editor.semanticHighlighting.enabled": false,
+  "breadcrumbs.enabled": false,
+  "workbench.layoutControl.enabled": true,
+  "editor.formatOnSave": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.tabSize": 2,
+  "editor.lineHeight": 21.4,
+  "workbench.editor.labelFormat": "short",
+  "editor.cursorStyle": "line-thin",
+  "editor.cursorBlinking": "phase",
+  "editor.stickyScroll.enabled": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.wordWrap": "on",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "files.associations": {
+    ".prettierrc.json": "jsonc"
+  },
+  "terminal.integrated.shell.linux": "/usr/bin/zsh",
+  "terminal.integrated.profiles.linux": {
+    "zsh": {
+      "path": "/usr/bin/zsh",
+      "overrideName": true
+    }
+  },
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "explorer.confirmDelete": false,
+  "javascript.suggest.autoImports": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact",
+    "javascriptreact": "javascriptreact",
+    "typescriptreact": "typescriptreact"
+  },
+  "typescript.tsserver.log": "off",
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "extensions.autoCheckUpdates": true,
+  "cSpell.userWords": [
+    "aiconfig",
+    "aliceblue",
+    "Altura",
+    "arquivo",
+    "arquivos",
+    "buceta",
+    "cbum",
+    "Cezar",
+    "chakra",
+    "donot",
+    "eden",
+    "esbenp",
+    "esnext",
+    "explorador",
+    "extensão",
+    "Fira",
+    "firestore",
+    "Formato",
+    "graff",
+    "IUGU",
+    "linha",
+    "Luiza",
+    "Magalu",
+    "Meslo",
+    "middlewares",
+    "mixpanel",
+    "Nilton",
+    "Noto",
+    "Olimpya",
+    "Onboarded",
+    "preco",
+    "Preco",
+    "prefetch",
+    "primeira",
+    "reactjs",
+    "rocketseat",
+    "scrpits",
+    "tabulação",
+    "tailwindcss",
+    "Tamanho",
+    "tsproject",
+    "upsert",
+    "vitrary"
+  ],
+  "cSpell.language": "en,pt",
+  "cSpell.enableFiletypes": [
+    "!asciidoc",
+    "!c",
+    "!cpp",
+    "!csharp",
+    "!go",
+    "!handlebars",
+    "!haskell",
+    "!jade",
+    "!java",
+    "!latex",
+    "!php",
+    "!pug",
+    "!python",
+    "!restructuredtext",
+    "!rust",
+    "!scala",
+    "!scss"
+  ],
+  "extensions.ignoreRecommendations": true,
+  "explorer.confirmDragAndDrop": false,
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+
+  "workbench.settings.applyToAllProfiles": [
+    "terminal.integrated.shellIntegration.enabled"
+  ],
+  "terminal.integrated.automationProfile.linux": {
+    "path": ""
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.colorDecorators": true,
+  "editor.guides.highlightActiveIndentation": true,
+  "workbench.colorTheme": "Dracula"
+}
+
