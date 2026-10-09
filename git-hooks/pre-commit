@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# Bloqueia commits com chaves, senhas e arquivos de assinatura.
+# Instalação (vale para todos os repos da máquina):
+#   git config --global core.hooksPath ~/dotfiles/git-hooks
+# Para pular uma vez, de propósito: git commit --no-verify
+
+set -euo pipefail
+
+padrao='(^|/)(\.env(\.[A-Za-z0-9_-]+)?|[^/]*\.(keystore|jks|pem|p12|pfx|key)|signing-key-info\.txt|id_rsa|id_ed25519|service-account[^/]*\.json)$'
+permitidos='\.env\.(example|sample|template)$'
+
+bloqueados=$(git -c core.quotepath=off diff --cached --name-only --diff-filter=ACMR \
+  | grep -E "$padrao" | grep -vE "$permitidos" || true)
+
+if [ -n "$bloqueados" ]; then
+  echo "✋ Commit bloqueado: arquivos sensíveis no commit:" >&2
+  echo "$bloqueados" | sed 's/^/   - /' >&2
+  echo "   Tire do commit (git rm --cached <arquivo>) e adicione ao .gitignore." >&2
+  exit 1
+fi
+
+# Se o gitleaks estiver instalado, procura chaves dentro do conteúdo também.
+if command -v gitleaks >/dev/null 2>&1; then
+  if ! gitleaks git --pre-commit --staged --redact --no-banner >/dev/null 2>&1; then
+    echo "✋ Commit bloqueado: o gitleaks encontrou uma possível chave/senha. Veja com:" >&2
+    echo "   gitleaks git --pre-commit --staged --redact -v" >&2
+    exit 1
+  fi
+fi
+
+# Continua chamando o pre-commit do próprio repo, se existir.
+local_hook="$(git rev-parse --git-dir)/hooks/pre-commit"
+if [ -x "$local_hook" ]; then
+  exec "$local_hook" "$@"
+fi
